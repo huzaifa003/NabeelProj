@@ -21,3 +21,9 @@
         width: 100%;
     }
 }
+@media only screen and (max-width:768px){
+    .setupBtn{
+        width: 90vw;
+        margin-left:-20px ;
+    }
+}

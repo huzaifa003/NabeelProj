@@ -29,16 +29,21 @@ const Navbar = ({ darkMode, setDarkMode }) => {
 
                 </div>
                 <div className='md:flex  md:justify-center text-white font-medium gap-6 '>
-                    <Link to='/tutorial'><p >HOME</p></Link>
+                    <Link to='/'><p >HOME</p></Link>
                     <Link to='/channel'><p >CHANNELS</p></Link>
                     <Link to='/setup'><p >SETUP</p></Link>
                     <Link to='/reseller'><p >RESELLERS</p></Link>
                 </div>
                 <div className='flex items-center  md:w-[35%]  justify-end gap-4 relative'>
-                    <button type='button'
-                        className='text-blue-lightmd-blue bg-white px-2 py-1 rounded-sm font-semibold'>
+                {darkMode?  <button type='button'
+                        className=' text-black bg-white px-2 py-1 rounded-sm font-semibold'>
                         LOG IN
-                    </button>
+                    </button>:
+                    <button type='button'
+                        className=' text-blue-lightmd-blue bg-white px-2 py-1 rounded-sm font-semibold'>
+                        LOG IN
+                    </button>}
+                 
                     <button className='bg-green-200 text-white px-2 py-1 rounded-sm'>
                         ORDER NOW
                     </button>

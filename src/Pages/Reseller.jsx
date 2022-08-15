@@ -17,7 +17,7 @@ const Reseller = ({ darkMode, setDarkMode }) => {
     }, [])
     return (
         <div className='my-16'>
-            <div className=' p-6 flex flex-wrap justify-between  mx-auto w-[85vw] lg:max-w-[1400px]'>
+            <div className=' p-6 flex flex-wrap  items-center justify-center  mx-auto w-[85vw] lg:max-w-[1400px]'>
                 <div className='max-w-[500px]  flex-col gap-8 flex lg:items-start md:items-center items-start justify-around flex-wrap'>
                     <div className='flex items-center justify-center'>
                         <h1 className='text-start text-white font-bold text-6xl'>The Worlds <span className='text-orange-600'>Best </span> IPTV Reseller Program</h1>
@@ -40,13 +40,13 @@ const Reseller = ({ darkMode, setDarkMode }) => {
 
                 </div>
             </div>
-            <div className='dark:bg-blue-darkmd bg-white w-[85vw] lg:max-w-[1400px] flex flex-col py-8 mx-auto shadow-sm rounded-md '>
+            <div className='dark:bg-blue-darkmd bg-white w-[85vw] lg:max-w-[1400px] flex flex-col items-center justify-center  py-8 mx-auto shadow-sm rounded-md '>
 
                 <div className='flex flex-col items-center justify-center gap-3'>
                     <h1 className='text-center  dark:text-white text-blue-darkmd font-bold text-3xl'>Why should You Select Out IPTV Reseller Prgoram?</h1>
                     <h2 className='text-start md:text-center p-4 dark:text-white text-blue-lightmd font-normal text-lg'>Cccambox is a well-known brand in the IPTV industry. We have been delivering super-fast, highly secure, and the most reliable IPTV service with extraordinary features since 2010 to more than 200 000 users. Here’s what makes the Cccambox TV reseller program an ideal choice.</h2>
                 </div>
-                <div className='md:grid-cols-3 grid sm:grid-cols-2 p-4 gap-8   mt-8'>
+                <div className='md:grid-cols-3 grid sm:grid-cols-2 p-4 gap-16  mt-8'>
                     {
                         data && data.map((item, index) => {
                             return <WhiteCard key={index} {...item} />

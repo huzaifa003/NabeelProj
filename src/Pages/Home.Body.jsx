@@ -20,7 +20,7 @@ import CustomAccordian from '../Components/CustomAccordian'
 import { questions } from '../Components/FaqData'
 import { AiOutlineArrowLeft } from 'react-icons/ai'
 import { AiOutlineArrowRight } from 'react-icons/ai'
-
+import Carousel from 'react-material-ui-carousel'
 
 const HomeBody = ({ darkMode, setDarkMode }) => {
 
@@ -112,34 +112,33 @@ const HomeBody = ({ darkMode, setDarkMode }) => {
     const CustomCard1Para = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt doloribus eligendi hic dicta soluta veniam maxime asperiores inventore, veritatis voluptatem consequatur iste fugit ullam facilis, quibusdam odio eius nisi corrupti?";
     return (
         <>
-
             {/* Hero headings */}
-            < div className='mt-20 p-2' >
+            <div className='mt-20 p-2' >
                 <h1 className='text-white  font-bold md:text-6xl text-5xl md:text-center'>DISCOVER THE #1 IPTV PROVIDER</h1>
                 <h2 className='md:text-center font-bold my-8 text-white  text-lg md:w-3/5 lg:w-[900px] mx-auto'>Today, we are revolutionizing the way you access IPTV. With +8000 channels and thousands of VOD, you'll be watching IPTV in a radically new, intelligent, and intuitive way</h2>
             </div >
             {/* Button */}
-            < div className='flex items-center justify-center flex-col' >
+            <div className='flex items-center justify-center flex-col' >
                 <button type='button' className=' py-2 px-16 rounded-md shadow-sm  bg-green-200 text-white'>JOIN US NOW</button>
                 <p className='text-white mt-2'>7 Days Money Back Guarantee</p>
             </div >
             {/* Main image */}
-            < div className='md:flex hidden items-center justify-center my-12' >
+            <div className='md:flex hidden items-center justify-center my-12' >
                 <img className='w-[900px] h-[450px]' src={MainPic} alt="" />
             </div >
             {/* ICONS section */}
-            < div className='my-12 h-auto md:my-8 dark:bg-blue-darkmd bg-white w-[90vw] lg:max-w-[940px] mx-auto grid md:grid-cols-4 shadow-md rounded-md p-8 gap-10' >
+            <div className='my-7 h-auto md:my-8 dark:bg-blue-darkmd bg-white w-[90vw] lg:max-w-[940px] mx-auto grid md:grid-cols-4 shadow-md rounded-md p-8 gap-10' >
                 <div className='flex  gap-2 items-center justify-center'>
                     <img src={player} alt="" />
                     <h1 className='w-24 md:font-semibold md:text-xl dark:text-white text-blue-darkmd'>8000+ TV Channels</h1>
                 </div>
                 <div className='flex gap-2 items-center justify-center '>
                     <img src={multiUserIcon} alt="" />
-                    <h1 className='w-24 md:font-semibold md:text-xl dark:text-white text-blue-darkmd'>Multi User Access</h1>
+                    <h1 className='w-32 md:font-semibold md:text-xl dark:text-white text-blue-darkmd'>Multi User Access</h1>
                 </div>
                 <div className='flex gap-2 items-center justify-center '>
                     <img src={hdQulityIcon} alt="" />
-                    <h1 className='w-24 md:font-semibold md:text-xl dark:text-white text-blue-darkmd'>FHD & HD Quality</h1>
+                    <h1 className='w-32 md:font-semibold md:text-xl dark:text-white text-blue-darkmd'>FHD & HD Quality</h1>
                 </div>
                 <div className='flex gap-2 items-center justify-center '>
                     <img src={Thunder} alt="" />
@@ -209,19 +208,21 @@ const HomeBody = ({ darkMode, setDarkMode }) => {
             </div> */}
             {/* Custom card slider */}
             <div className='z-10 '>
-                <div className='relative h-[300px] md:w-[90vw] lg:w-[900px] mx-auto z-10 items-center overflow-x-hidden justify-center '>
-                    <div onClick={handlePrevious} className='absolute top-[50%] translate-y-[-50%] left-2 md:left-32'><AiOutlineArrowLeft color='white' fontSize={30} /></div>
+
+                    {/* <div onClick={handlePrevious} className='absolute top-[50%] translate-y-[-50%] left-2 md:left-32'><AiOutlineArrowLeft color='white' fontSize={30} /></div> */}
+                    <Carousel animation = "slide" navButtonsAlwaysVisible = "true"> 
                     {
                         customSmallCaardData.map((item, index) => {
-                            if (index == currentSlide)
-                                return <div className=' absolute left-[50%] translate-x-[-50%]'>
+                            
+                                return <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: 'fit-content', maxHeight: '60vh'}}>
                                     <CustomSmallCard key={index} {...item} />
                                 </div>
                         })
                     }
-                    <div onClick={handleNext} className='absolute top-[50%] translate-y-[-50%] right-2 md:right-32'><AiOutlineArrowRight color='white' fontSize={30} /></div>
+                    </Carousel>
+                    {/* <div onClick={handleNext} className='absolute top-[50%] translate-y-[-50%] right-2 md:right-32'><AiOutlineArrowRight color='white' fontSize={30} /></div> */}
                 </div>
-            </div>
+      
 
             {/* text and headings below small custom cards on web page */}
             <div className='w-[70vw] mx-auto flex items-center justify-center mt-8'>
@@ -258,7 +259,7 @@ const HomeBody = ({ darkMode, setDarkMode }) => {
             <div className='my-8 w-[90vw] lg:max-w-[940px] mx-auto flex flex-col items-center justify-center gap-6'>
                 {
                     FAQ && FAQ.map((faq, index) => {
-                        return <CustomAccordian key={index} {...faq} />
+                        return <CustomAccordian key={index} {...faq} mode = {darkMode} />
                     })
                 }
             </div>
