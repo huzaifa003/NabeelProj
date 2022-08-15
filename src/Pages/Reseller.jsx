@@ -7,8 +7,52 @@ import { questions } from '../Components/FaqData'
 import CustomAccordian from '../Components/CustomAccordian'
 import PriceTag from '../Components/PriceTag'
 import TimeTag from '../Components/TimeTag'
+import Carousel from 'react-material-ui-carousel'
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 
 const Reseller = ({ darkMode, setDarkMode }) => {
+
+
+
+    const darkTheme = createTheme({
+        palette: {
+            type: 'dark',
+            primary: {
+              main: '#3f51b5',
+            },
+            secondary: {
+              main: '#f50057',
+            },
+            background: {
+              paper: '#040e2e',
+            },
+            text: {
+                primary: '#ffffff',
+            },
+
+          },
+
+    });
+
+    const lightTheme = createTheme({
+        palette: {
+            mode: 'light',
+        },
+    });
+
+    const [expanded, setExpanded] = React.useState(false);
+
+    const handleChange = (panel) => (event, isExpanded) => {
+        setExpanded(isExpanded ? panel : false);
+    };
+
+
     const [data, setData] = useState(null)
     const [FAQ, setFAQ] = useState(null);
     useEffect(() => {
@@ -89,7 +133,45 @@ const Reseller = ({ darkMode, setDarkMode }) => {
             <div className='my-8 w-[90vw] lg:max-w-[940px] mx-auto flex flex-col items-center justify-center gap-6'>
                 {
                     FAQ && FAQ.map((faq, index) => {
-                        return <CustomAccordian key={index} {...faq} mode = {darkMode} />
+                        const { id, question, answer } = faq
+                        return (
+                            darkMode ?
+                                <ThemeProvider theme={darkTheme}>
+                                    <CssBaseline />
+                                    <Accordion expanded={expanded === id} onChange={handleChange(id)}>
+                                        <AccordionSummary
+                                            expandIcon={<ExpandMoreIcon />}
+                                            aria-controls="panel1a-content"
+                                            id="panel1a-header"
+                                        >
+                                            <Typography> {question}</Typography>
+                                        </AccordionSummary>
+                                        <AccordionDetails>
+                                            <Typography>
+                                                {answer}
+                                            </Typography>
+                                        </AccordionDetails>
+                                    </Accordion>
+                                </ThemeProvider>
+                                :
+                                <ThemeProvider theme={lightTheme}>
+                                    <CssBaseline />
+                                    <Accordion expanded={expanded === id} onChange={handleChange(id)}>
+                                        <AccordionSummary
+                                            expandIcon={<ExpandMoreIcon />}
+                                            aria-controls="panel1a-content"
+                                            id="panel1a-header"
+                                        >
+                                            <Typography> {question}</Typography>
+                                        </AccordionSummary>
+                                        <AccordionDetails>
+                                            <Typography>
+                                                {answer}
+                                            </Typography>
+                                        </AccordionDetails>
+                                    </Accordion>
+                                </ThemeProvider>
+                        )
                     })
                 }
             </div>

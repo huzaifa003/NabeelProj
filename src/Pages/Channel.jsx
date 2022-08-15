@@ -5,6 +5,7 @@ import MediaQuery from 'react-responsive'
 import { Select, FormControl, InputLabel, MenuItem } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+
 const Channel = ({ darkMode, setDarkMode }) => {
 
     const darkTheme = createTheme({
@@ -232,7 +233,7 @@ const Channel = ({ darkMode, setDarkMode }) => {
                         <AiOutlineSearch fontSize={30} color='white' className='absolute right-4 top-[50%] translate-y-[-50%]' />
                         <input placeholder='Search' type="search " className='w-full border-none outline-none dark:text-white text-black  bg-[#E2E4E8] dark:bg-[#262F4A] p-2 px-4 rounded-md shadow-md' value={search} onChange={(e) => setSearch(e.target.value)} />
                     </div>
-                    <div className='grid grid-cols-2 gap-2 '>
+                    <div className='grid grid-cols-2 gap-2 overflow-auto overflow-y-auto'>
 
                         {
 

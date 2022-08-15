@@ -48,8 +48,12 @@ const HomeBody = ({ darkMode, setDarkMode }) => {
               main: '#f50057',
             },
             background: {
-              paper: '#007aff',
+              paper: '#040e2e',
             },
+            text: {
+                primary: '#ffffff',
+            },
+
           },
 
     });
