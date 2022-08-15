@@ -14,6 +14,7 @@ import Footer from '../Components/Footer'
 import { Link } from 'react-router-dom'
 import Setup from './Setup'
 import Tutorial from './Tutorial'
+import MenuIcon from '@mui/icons-material/Menu';
 
 const Home = ({ darkMode, setDarkMode }) => {
     const [toggleSidebar, setToggleSidebar] = useState(false)
@@ -39,10 +40,14 @@ const Home = ({ darkMode, setDarkMode }) => {
                 <div className={`z-20 lg:hidden mx-auto    flex justify-between items-center px-4 py-4 w-full fixed top-0 ${Scrolled ? 'bg-blue-lightmd' : ''}  ${Scrolled ? 'dark:bg-blue-darkmd' : ''}`}>
                     <img src={Logo} alt="Logo" />
                     <div className='rounded-full flex items-center justify-center w-8 h-8 bg-white '>
-                        <div className='p-4'>
+                        {/* <div className='p-4'>
                           {
                             darkMode?<FiMenu  onClick={() => setToggleSidebar(!toggleSidebar)} fontSize={20}  color='blue-darkmd' />
                           : <FiMenu  onClick={() => setToggleSidebar(!toggleSidebar)} fontSize={20}  color='blue-darkmd' />}  
+                        </div> */}
+                        <div className="p-4">
+                        
+                            <MenuIcon style={{color:"black"}}  onClick={() => setToggleSidebar(!toggleSidebar)}></MenuIcon>
                         </div>
 
                     </div>

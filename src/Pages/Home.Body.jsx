@@ -130,7 +130,7 @@ const HomeBody = ({ darkMode, setDarkMode }) => {
             <div className='my-7 h-auto md:my-8 dark:bg-blue-darkmd bg-white w-[90vw] lg:max-w-[940px] mx-auto grid md:grid-cols-4 shadow-md rounded-md p-8 gap-10' >
                 <div className='flex  gap-2 items-center justify-center'>
                     <img src={player} alt="" />
-                    <h1 className='w-24 md:font-semibold md:text-xl dark:text-white text-blue-darkmd'>8000+ TV Channels</h1>
+                    <h1 className='w-32 md:font-semibold md:text-xl dark:text-white text-blue-darkmd'>8000+ TV Channels</h1>
                 </div>
                 <div className='flex gap-2 items-center justify-center '>
                     <img src={multiUserIcon} alt="" />
@@ -142,7 +142,7 @@ const HomeBody = ({ darkMode, setDarkMode }) => {
                 </div>
                 <div className='flex gap-2 items-center justify-center '>
                     <img src={Thunder} alt="" />
-                    <h1 className='w-24 md:font-semibold md:text-xl dark:text-white text-blue-darkmd'>Anti Buffer 3.0</h1>
+                    <h1 className='w-32 md:font-semibold md:text-xl dark:text-white text-blue-darkmd'>Anti Buffer 3.0</h1>
                 </div>
 
             </div >
