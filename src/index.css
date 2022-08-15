@@ -22,6 +22,6 @@ html {
     -ms-user-select: none;
 }
 
-::-webkit-scrollbar {
+.scroll::-webkit-scrollbar {
     display: none;
 }
