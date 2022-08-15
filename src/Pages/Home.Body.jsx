@@ -259,7 +259,7 @@ const HomeBody = ({ darkMode, setDarkMode }) => {
             <div className='my-8 w-[90vw] lg:max-w-[940px] mx-auto flex flex-col items-center justify-center gap-6'>
                 {
                     FAQ && FAQ.map((faq, index) => {
-                        return <CustomAccordian key={index} {...faq} mode = {darkMode} />
+                        return <CustomAccordian  key={index} {...faq} mode = {darkMode} />
                     })
                 }
             </div>

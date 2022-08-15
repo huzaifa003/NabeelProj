@@ -19,8 +19,8 @@ const Setup = ({ darkMode, setDarkMode }) => {
     const [current, setCurrent] = useState('Web');
     const [index, setIndex] = useState(0);
     const [prevIndex, setPrevIndex] = useState(1);
-    const notActiveBtn = 'transition-all duration-300 ease-in-out dark:hover:bg-white hover:bg-blue-darkmdbg hover:text-white dark:hover:text-blue-lightmd md:w-[150px] w-full md:p-6 p-4 dark:text-white text-blue-lightmd  rounded-md dark:bg-blue-darkmdbg bg-white shadow-sm flex flex-col items-center justify-center gap-4'
-    const Activebtn = 'transition-all duration-300 ease-in-out dark:hover:bg-white dark:hover:text-blue-lightmd md:w-[150px] w-full md:p-6 p-4 rounded-md dark:text-white text-blue-lightmd dark:bg-white dark:text-blue-darkmdbg bg-blue-darkmdbg text-slate-100 shadow-sm flex flex-col items-center justify-center gap-4'
+    const notActiveBtn = 'transition-all duration-300 ease-in-out dark:hover:bg-white hover:bg-[#040e2e] hover:text-white dark:hover:text-blue-lightmd md:w-[150px] w-full md:p-6 p-4 dark:text-white text-blue-lightmd  rounded-md dark:bg-[#040e2e] bg-white shadow-sm flex flex-col items-center justify-center gap-4'
+    const Activebtn = 'transition-all duration-300 ease-in-out dark:hover:bg-white dark:hover:text-blue-lightmd md:w-[150px] w-full md:p-6 p-4 rounded-md dark:text-white text-blue-lightmd dark:bg-white dark:text-blue-darkmdbg bg-[#040e2e] text-slate-100 shadow-sm flex flex-col items-center justify-center gap-4'
 
     //references
     const WebRef = useRef(null);
@@ -45,7 +45,7 @@ const Setup = ({ darkMode, setDarkMode }) => {
                         {/* /icon 1 */}
                         <div>
                             <ButtonBase style={{ height: 'max' }}>
-                                <div  onClick={(e) => {
+                                <div   onClick={(e) => {
 
                                     WebRef.current?.scrollIntoView({ behavior: 'smooth' });
                                     setCurrent('Web');
@@ -106,13 +106,12 @@ const Setup = ({ darkMode, setDarkMode }) => {
                         <div>
                             <ButtonBase>
                                 <div onClick={(e) => {
-                                    
                                     setCurrent('Box & Stick')
                                     setPrevIndex(index);
                                     setIndex(3);
                                     BoxRef.current?.scrollIntoView({ behavior: 'smooth' });
 
-                                }} className={` ${current == 'Box & Stick' ? Activebtn : notActiveBtn} setupBtn`}>
+                                }} className={` ${current == 'Box & Stick' ? Activebtn : notActiveBtn}   setupBtn`}>
                                     <button>
                                         <TbDevices style={{
                                             height:"94px",
