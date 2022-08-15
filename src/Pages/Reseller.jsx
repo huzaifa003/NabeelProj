@@ -46,7 +46,7 @@ const Reseller = ({ darkMode, setDarkMode }) => {
                     <h1 className='text-center  dark:text-white text-blue-darkmd font-bold text-3xl'>Why should You Select Out IPTV Reseller Prgoram?</h1>
                     <h2 className='text-start md:text-center p-4 dark:text-white text-blue-lightmd font-normal text-lg'>Cccambox is a well-known brand in the IPTV industry. We have been delivering super-fast, highly secure, and the most reliable IPTV service with extraordinary features since 2010 to more than 200 000 users. Here’s what makes the Cccambox TV reseller program an ideal choice.</h2>
                 </div>
-                <div className='md:grid-cols-3 grid sm:grid-cols-2 p-4 gap-16  mt-8'>
+                <div className='lg:grid-cols-3 grid md:grid-cols-2 sm:grid-col-1 p-4 gap-8  justify-center justify-items-center content-center items-center   mt-8'>
                     {
                         data && data.map((item, index) => {
                             return <WhiteCard key={index} {...item} />
@@ -60,7 +60,7 @@ const Reseller = ({ darkMode, setDarkMode }) => {
                     <p className='dark:text-white text-blue-lightmd font-light md:px-32 px-4 text-justify '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam enim praesentium velit nam dicta ullam. Vitae dignissimos delectus illum sint laboriosam totam! Delectus, exercitationem assumenda voluptas culpa ut aperiam nobis?</p>
                 </div>
 
-                <div className='sm:w-[100%]  gap-6 md:my-8 grid lg:grid-cols-4 grid-cols-2'>
+                <div className='sm:w-[100%]  gap-6 md:my-8 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1'>
                     <PriceTag />
                     <PriceTag />
                     <PriceTag />
