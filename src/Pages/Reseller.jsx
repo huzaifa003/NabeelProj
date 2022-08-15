@@ -86,10 +86,10 @@ const Reseller = ({ darkMode, setDarkMode }) => {
             </div>
             {/* FAQ */}
             <h1 className='text-white mt-12 text-5xl font-semibold mx-auto text-center'>FAQ</h1>
-            <div className='my-8 lg:max-w-[1400px] p-4 w-[90vw] mx-auto flex flex-col items-center justify-center gap-6'>
+            <div className='my-8 w-[90vw] lg:max-w-[940px] mx-auto flex flex-col items-center justify-center gap-6'>
                 {
                     FAQ && FAQ.map((faq, index) => {
-                        return <CustomAccordian key={index} {...faq} />
+                        return <CustomAccordian key={index} {...faq} mode = {darkMode} />
                     })
                 }
             </div>
