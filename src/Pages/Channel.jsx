@@ -238,7 +238,7 @@ const Channel = ({ darkMode, setDarkMode }) => {
 
                             filteredArray && filteredArray.map((animal, index) => {
 
-                                return <h1 key={index} className='max-w-[400px] rounded-md shadow-md  h-[30px] px-4 py-0.5 dark:bg-[#262F4A] dark:text-white  bg-[#E2E4E8] text-black text-xl overflow-hidden'>{animal.toUpperCase()}</h1>
+                                return <h1 key={index} className='max-w-[400px] rounded-md shadow-md  h-[30px] px-4 py-0.5 dark:bg-[#262F4A] dark:text-white  bg-[#E2E4E8] text-black text-lg overflow-hidden'>{animal.toUpperCase()}</h1>
                             })
                         }
                     </div>

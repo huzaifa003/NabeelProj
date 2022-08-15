@@ -77,7 +77,7 @@ const HomeBody = ({ darkMode, setDarkMode }) => {
             instruction: 'Up'
         },
         {
-            mainHeading: 'Load Balancer',
+            mainHeading: 'Load Balancers',
             perHeading: '99.99%',
             instruction: 'Up'
         }
@@ -207,7 +207,7 @@ const HomeBody = ({ darkMode, setDarkMode }) => {
                 </div>
             </div> */}
             {/* Custom card slider */}
-            <div className='z-10 '>
+            <div className='z-10 w-[95%] ml-10 '>
 
                     {/* <div onClick={handlePrevious} className='absolute top-[50%] translate-y-[-50%] left-2 md:left-32'><AiOutlineArrowLeft color='white' fontSize={30} /></div> */}
                     <Carousel animation = "slide" navButtonsAlwaysVisible = "true"> 
@@ -215,7 +215,7 @@ const HomeBody = ({ darkMode, setDarkMode }) => {
                         customSmallCaardData.map((item, index) => {
                             
                                 return <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: 'fit-content', maxHeight: '60vh'}}>
-                                    <CustomSmallCard key={index} {...item} />
+                                    <CustomSmallCard  key={index} {...item} />
                                 </div>
                         })
                     }
